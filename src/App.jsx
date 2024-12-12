@@ -1,8 +1,6 @@
 // this type of webpage is called a dynamic webpage, where the users create data for it
 
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import { Link, Route, Routes, useParams } from "react-router-dom";
 
@@ -60,7 +58,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Homepage blogPosts={blogPosts} />} />
-        <Route path="/:blogPostID" element={<SingleBlogPost />} />
+        <Route
+          path="/:blogPostID"
+          element={<SingleBlogPost blogPosts={blogPosts} />}
+        />
         <Route
           path="/create"
           element={
